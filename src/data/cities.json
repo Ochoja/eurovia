@@ -5,9 +5,9 @@
     "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png",
     "rating": 4.8,
     "description": "The city of love, light, and grand boulevard culture.",
-    "layout": "wide",
-    "previewTitle": "France",
-    "previewDescription": "Popularly known as the city of love, features cities like Paris, Lyon and other cool cities."
+    "layout": "narrow",
+    "previewTitle": "Paris, France",
+    "previewDescription": "Popularly known as the city of love, featuring iconic landmarks, fine cuisine, and timeless elegance."
   },
   {
     "name": "Amsterdam",
@@ -16,28 +16,28 @@
     "rating": 4.8,
     "description": "Canal-side living with galleries, bikes, and layered history.",
     "layout": "wide",
-    "previewTitle": "Netherlands",
-    "previewDescription": "Canal-lined streets, creative districts, and a slower urban rhythm perfect for quick previews."
+    "previewTitle": "Amsterdam, Netherlands",
+    "previewDescription": "Canal-lined streets, creative districts, and a slower urban rhythm perfect for modern explorers."
   },
   {
     "name": "Milan",
     "country": "Italy",
-    "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/Italy.png",
     "rating": 4.8,
     "description": "Refined fashion energy framed by dramatic architecture.",
     "layout": "tall",
-    "previewTitle": "Italy",
-    "previewDescription": "A polished city break with iconic design, elegant food culture, and easy rail access."
+    "previewTitle": "Milan, Italy",
+    "previewDescription": "A polished city break with iconic design, elegant food culture, and world-class architecture."
   },
   {
     "name": "London",
     "country": "United Kingdom",
     "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png",
     "rating": 4.8,
-    "description": "Layered neighborhoods, iconic bridges, and nonstop city rhythm.",
+    "description": "Layered neighbourhoods, iconic bridges, and nonstop city rhythm.",
     "layout": "wide",
-    "previewTitle": "United Kingdom",
-    "previewDescription": "Historic landmarks meet modern neighborhoods for a quick, high-energy city escape."
+    "previewTitle": "London, UK",
+    "previewDescription": "Historic landmarks meet modern neighbourhoods for a high-energy, culture-rich city escape."
   },
   {
     "name": "Seville",
@@ -45,8 +45,8 @@
     "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png",
     "rating": 4.8,
     "description": "Warm evenings, ornate plazas, and strong local character.",
-    "layout": "wide",
-    "previewTitle": "Spain",
+    "layout": "narrow",
+    "previewTitle": "Seville, Spain",
     "previewDescription": "Sun-soaked streets, deep local culture, and architecture that feels instantly memorable."
   }
 ]

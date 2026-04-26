@@ -5,17 +5,20 @@
       {
         "name": "Paris",
         "coordinates": [48.8566, 2.3522],
-        "interest": "Arts & Culture"
+        "interest": "Arts & Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png"
       },
       {
         "name": "Lyon",
         "coordinates": [45.764, 4.8357],
-        "interest": "Food"
+        "interest": "Food",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png"
       },
       {
         "name": "Nice",
         "coordinates": [43.7102, 7.262],
-        "interest": "Luxury"
+        "interest": "Luxury",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png"
       }
     ]
   },
@@ -25,17 +28,20 @@
       {
         "name": "Milan",
         "coordinates": [45.4642, 9.19],
-        "interest": "Luxury"
+        "interest": "Luxury",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Italy.png"
       },
       {
         "name": "Rome",
         "coordinates": [41.9028, 12.4964],
-        "interest": "Culture"
+        "interest": "Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Italy.png"
       },
       {
         "name": "Florence",
         "coordinates": [43.7696, 11.2558],
-        "interest": "Arts & Culture"
+        "interest": "Arts & Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Italy.png"
       }
     ]
   },
@@ -45,17 +51,20 @@
       {
         "name": "Seville",
         "coordinates": [37.3891, -5.9845],
-        "interest": "Adventure"
+        "interest": "Adventure",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png"
       },
       {
         "name": "Barcelona",
         "coordinates": [41.3874, 2.1686],
-        "interest": "Arts & Culture"
+        "interest": "Arts & Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png"
       },
       {
         "name": "Madrid",
         "coordinates": [40.4168, -3.7038],
-        "interest": "Food"
+        "interest": "Food",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png"
       }
     ]
   },
@@ -65,12 +74,14 @@
       {
         "name": "Amsterdam",
         "coordinates": [52.3676, 4.9041],
-        "interest": "Wellness"
+        "interest": "Wellness",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Amsterdam.png"
       },
       {
         "name": "Rotterdam",
         "coordinates": [51.9244, 4.4777],
-        "interest": "Culture"
+        "interest": "Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/Amsterdam.png"
       }
     ]
   },
@@ -80,12 +91,14 @@
       {
         "name": "London",
         "coordinates": [51.5072, -0.1276],
-        "interest": "Culture"
+        "interest": "Culture",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png"
       },
       {
         "name": "Edinburgh",
         "coordinates": [55.9533, -3.1883],
-        "interest": "Adventure"
+        "interest": "Adventure",
+        "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png"
       }
     ]
   }
