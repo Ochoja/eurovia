@@ -6,194 +6,97 @@ const email = ref('')
 </script>
 
 <template>
-  <footer class="footer page-pad">
-    <div class="footer__inner page-shell">
-      <div class="footer__brand-col">
-        <p class="footer__brand">EURO<span>VIA</span></p>
-        <p class="footer__tagline">
-          Lorem ipsum dolor sit amet, consectetur adipiscing. Et euismod volutpat congue eget cras
-          malesuada massa mauris.
+  <footer class="bg-[#0c0f14] px-[clamp(1.25rem,5vw,3.25rem)] py-16">
+    <div class="w-full max-w-[1280px] mx-auto grid gap-10 footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <p class="m-0 text-white font-[Plus_Jakarta_Sans] text-2xl font-extrabold">
+          EURO<span class="text-[var(--accent)]">VIA</span>
+        </p>
+        <p class="mt-3 text-white/40 text-[0.82rem] leading-[1.65] max-w-[22ch]">
+          Curated European journeys for the modern explorer. Discover destinations, cities,
+          and culture-driven escapes.
         </p>
       </div>
 
-      <div class="footer__links-col">
-        <p class="footer__col-heading">Destinations</p>
-        <ul class="footer__list">
-          <li><a href="#">Italy</a></li>
-          <li><a href="#">Paris</a></li>
-          <li><a href="#">Amsterdam</a></li>
-          <li><a href="#">Amsterdam</a></li>
-          <li><a href="#">Amsterdam</a></li>
+      <!-- Destinations -->
+      <div>
+        <p class="m-0 mb-4 text-white text-[0.9rem] font-semibold">Destinations</p>
+        <ul class="list-none m-0 p-0 flex flex-col gap-2.5">
+          <li v-for="dest in ['Italy', 'Paris', 'Amsterdam', 'London', 'Seville']" :key="dest">
+            <a href="#" class="text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">{{ dest }}</a>
+          </li>
         </ul>
       </div>
 
-      <div class="footer__links-col">
-        <p class="footer__col-heading">Support</p>
-        <ul class="footer__list">
+      <!-- Support -->
+      <div>
+        <p class="m-0 mb-4 text-white text-[0.9rem] font-semibold">Support</p>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
           <li>
-            <a href="#" class="footer__social-link">
-              <Icon icon="mdi:facebook" />
+            <a href="#" class="inline-flex items-center gap-2 text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">
+              <Icon icon="mdi:facebook" class="text-[1.05rem]" />
               <span>Facebook</span>
             </a>
           </li>
           <li>
-            <a href="#" class="footer__social-link">
-              <Icon icon="mdi:instagram" />
+            <a href="#" class="inline-flex items-center gap-2 text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">
+              <Icon icon="mdi:instagram" class="text-[1.05rem]" />
               <span>Instagram</span>
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="footer__newsletter-col">
-        <p class="footer__col-heading">Subscribe to our Newsletter</p>
-        <p class="footer__newsletter-sub">Sign up for our updates by subscribing to our newsletter</p>
-        <div class="footer__newsletter-form">
+      <!-- Newsletter -->
+      <div>
+        <p class="m-0 mb-1 text-white text-[0.9rem] font-semibold">Subscribe to our Newsletter</p>
+        <p class="mt-1 mb-4 text-white/40 text-[0.8rem] leading-[1.5]">
+          Sign up for updates by subscribing to our newsletter
+        </p>
+        <div class="flex rounded-full overflow-hidden border border-white/10 bg-white/6 max-w-[20rem]">
           <input
             v-model="email"
             type="email"
             placeholder="Enter your email"
-            class="footer__newsletter-input"
+            class="flex-1 min-w-0 bg-transparent border-0 text-white text-[0.82rem] px-4 py-[0.68rem] outline-none placeholder-white/30"
           />
-          <button type="button" class="footer__newsletter-btn">Subscribe</button>
+          <button
+            type="button"
+            class="shrink-0 rounded-full bg-white text-[#0c0f14] font-bold text-[0.8rem] px-4 py-[0.62rem] m-[0.2rem] border-0 cursor-pointer"
+          >
+            Subscribe
+          </button>
         </div>
       </div>
+
     </div>
   </footer>
 </template>
 
 <style scoped>
-.footer {
-  background: #0c0f14;
-  padding-block: 4rem;
-}
-
-.footer__inner {
-  display: grid;
-  gap: 2.5rem;
+.footer-grid {
   grid-template-columns: 1fr;
 }
 
-.footer__brand {
-  margin: 0;
-  color: #fff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.footer__brand span {
-  color: var(--accent);
-}
-
-.footer__tagline {
-  margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 0.82rem;
-  line-height: 1.6;
-  max-width: 24ch;
-}
-
-.footer__col-heading {
-  margin: 0 0 1rem;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.footer__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.footer__list a {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.875rem;
-  transition: color 0.2s ease;
-}
-
-.footer__list a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.footer__social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.footer__social-link :deep(svg) {
-  font-size: 1.05rem;
-}
-
-.footer__newsletter-sub {
-  margin: 0 0 1rem;
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-.footer__newsletter-form {
-  display: flex;
-  gap: 0;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  max-width: 20rem;
-}
-
-.footer__newsletter-input {
-  flex: 1;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  padding: 0.7rem 1rem;
-  font-size: 0.82rem;
-  outline: none;
-  min-width: 0;
-}
-
-.footer__newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.footer__newsletter-btn {
-  border: 0;
-  border-radius: 999px;
-  background: #fff;
-  color: #0c0f14;
-  cursor: pointer;
-  padding: 0.65rem 1.1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin: 0.2rem;
-}
-
 @media (min-width: 768px) {
-  .footer__inner {
+  .footer-grid {
     grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 3rem;
   }
 
-  .footer__newsletter-col {
+  .footer-grid > :last-child {
     grid-column: 1 / -1;
   }
 }
 
 @media (min-width: 1024px) {
-  .footer__inner {
+  .footer-grid {
     grid-template-columns: 1.6fr 1fr 1fr 1.8fr;
-    gap: 2.5rem;
     align-items: start;
   }
 
-  .footer__newsletter-col {
+  .footer-grid > :last-child {
     grid-column: auto;
   }
 }

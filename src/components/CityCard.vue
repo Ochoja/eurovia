@@ -27,7 +27,11 @@ defineProps<{
     />
     <div
       class="absolute inset-0 w-full h-full"
-      style="background: linear-gradient(180deg, rgba(10,14,21,0.08) 0%, rgba(10,14,21,0.66) 100%), linear-gradient(180deg, rgba(10,14,21,0.02) 40%, rgba(10,14,21,0.78) 100%)"
+      style="
+        background:
+          linear-gradient(180deg, rgba(10, 14, 21, 0.08) 0%, rgba(10, 14, 21, 0.66) 100%),
+          linear-gradient(180deg, rgba(10, 14, 21, 0.02) 40%, rgba(10, 14, 21, 0.78) 100%);
+      "
     ></div>
 
     <!-- Rating badge -->
@@ -41,22 +45,29 @@ defineProps<{
     <!-- Default info label -->
     <div class="city-card__content absolute inset-0 flex items-end p-3.5 text-white">
       <div
-        class="city-card__default border border-white/24 rounded-xl bg-[rgba(18,18,18,0.24)] backdrop-blur-[14px] px-2.5 py-2 w-fit max-w-[15rem] transition-all duration-300"
+        class="city-card__default border border-white/24 rounded-md bg-[rgba(18,18,18,0.24)] backdrop-blur-[14px] px-2.5 py-2 w-fit max-w-[15rem] transition-all duration-300"
       >
-        <h3 class="m-0 font-[Plus_Jakarta_Sans] font-medium text-[1.3rem] leading-tight">{{ city.name }}</h3>
-        <p class="m-0 mt-0.5 text-white/76 text-[0.62rem]">{{ city.description }}</p>
+        <h3 class="m-0 font-[Plus_Jakarta_Sans] font-medium text-[1.3rem] leading-tight">
+          {{ city.name }}
+        </h3>
+        <p class="m-0 mt-0.5 text-white/76 text-xs">{{ city.description }}</p>
       </div>
     </div>
 
     <!-- Hover preview -->
     <div
-      class="city-card__preview absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-4 py-6 opacity-0 transition-all duration-300 translate-y-3"
-      style="background: linear-gradient(180deg, rgba(10,14,21,0.26) 0%, rgba(10,14,21,0.78) 100%)"
+      class="city-card__preview absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-2 py-6 opacity-0 transition-all duration-300 translate-y-3"
+      style="
+        background: linear-gradient(180deg, rgba(10, 14, 21, 0.26) 0%, rgba(10, 14, 21, 0.78) 100%);
+      "
     >
-      <h3 class="m-0 font-[Plus_Jakarta_Sans] font-semibold text-white" style="font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.15;">
+      <h3
+        class="m-0 font-[Plus_Jakarta_Sans] font-semibold text-white"
+        style="font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.15"
+      >
         {{ city.previewTitle }}
       </h3>
-      <p class="m-0 max-w-[18ch] text-white/92 text-[0.82rem] leading-[1.6]">
+      <p class="m-0 max-w-[95%] text-white/92 text-sm leading-[1.6]">
         {{ city.previewDescription }}
       </p>
       <button

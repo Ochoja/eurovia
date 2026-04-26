@@ -253,17 +253,13 @@ onBeforeUnmount(() => {
     <!-- ── Hero ───────────────────────────────────────── -->
     <section
       id="discover"
-      class="relative min-h-[46rem] pb-14"
-      style="
-        background:
-          linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.65) 100%),
-          url('https://ik.imagekit.io/Ochoja01/euvoria/Hero.png') center/cover no-repeat;
-      "
+      class="relative min-h-[46rem] flex items-center"
+      style="background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.68) 100%), url('https://ik.imagekit.io/Ochoja01/euvoria/Hero.png') center/cover no-repeat;"
     >
       <TheNavigation :sections="sections" />
 
       <div
-        class="relative flex flex-col items-center text-center px-[clamp(1.25rem,5vw,3.25rem)] pt-[clamp(8.5rem,17vh,16rem)] pb-14 w-full max-w-[1280px] mx-auto"
+        class="relative w-full flex flex-col items-center text-center px-[clamp(1.25rem,5vw,3.25rem)] pt-20 pb-12 max-w-[1280px] mx-auto"
       >
         <h1
           class="m-0 mb-2 text-white font-[Plus_Jakarta_Sans] leading-[1.02] sm:whitespace-nowrap"

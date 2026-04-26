@@ -163,6 +163,7 @@ onBeforeUnmount(() => {
           >
             <Icon
               :icon="mobileOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'"
+              class="text-white"
             />
           </button>
         </div>
@@ -170,7 +171,7 @@ onBeforeUnmount(() => {
 
       <!-- Mobile panel -->
       <div
-        class="absolute left-0 right-0 grid gap-2 rounded-3xl border border-white/15 bg-[rgba(19,22,28,0.88)] backdrop-blur-[18px] p-3 transition-all duration-200 md:hidden"
+        class="absolute left-0 right-0 grid gap-2 rounded-3xl border bg-[rgba(19,22,28,0.88)] border-[#fafafa]/40 text-white/80 backdrop-blur-[10px] p-3 transition-all duration-200 md:hidden"
         :class="
           mobileOpen
             ? 'top-[calc(100%+0.75rem)] opacity-100 pointer-events-auto translate-y-0'
@@ -181,7 +182,7 @@ onBeforeUnmount(() => {
           v-for="section in sections"
           :key="`${section.id}-m`"
           type="button"
-          class="rounded-2xl px-4 py-3 text-left text-white/86 border-0 bg-transparent cursor-pointer"
+          class="rounded-2xl px-4 py-3 text-left text-white border-0 bg-transparent cursor-pointer"
           :class="activeSection === section.id ? 'bg-white/15 text-white' : ''"
           @click="goToSection(section.id)"
         >
