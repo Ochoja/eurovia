@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Paris",
+    "country": "France",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png",
+    "rating": 4.8,
+    "description": "The city of love, light, and grand boulevard culture.",
+    "layout": "wide",
+    "previewTitle": "France",
+    "previewDescription": "Popularly known as the city of love, features cities like Paris, Lyon and other cool cities."
+  },
+  {
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/Amsterdam.png",
+    "rating": 4.8,
+    "description": "Canal-side living with galleries, bikes, and layered history.",
+    "layout": "wide",
+    "previewTitle": "Netherlands",
+    "previewDescription": "Canal-lined streets, creative districts, and a slower urban rhythm perfect for quick previews."
+  },
+  {
+    "name": "Milan",
+    "country": "Italy",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png",
+    "rating": 4.8,
+    "description": "Refined fashion energy framed by dramatic architecture.",
+    "layout": "tall",
+    "previewTitle": "Italy",
+    "previewDescription": "A polished city break with iconic design, elegant food culture, and easy rail access."
+  },
+  {
+    "name": "London",
+    "country": "United Kingdom",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/London.png",
+    "rating": 4.8,
+    "description": "Layered neighborhoods, iconic bridges, and nonstop city rhythm.",
+    "layout": "wide",
+    "previewTitle": "United Kingdom",
+    "previewDescription": "Historic landmarks meet modern neighborhoods for a quick, high-energy city escape."
+  },
+  {
+    "name": "Seville",
+    "country": "Spain",
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png",
+    "rating": 4.8,
+    "description": "Warm evenings, ornate plazas, and strong local character.",
+    "layout": "wide",
+    "previewTitle": "Spain",
+    "previewDescription": "Sun-soaked streets, deep local culture, and architecture that feels instantly memorable."
+  }
+]

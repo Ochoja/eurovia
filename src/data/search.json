@@ -1,0 +1,92 @@
+[
+  {
+    "country": "France",
+    "cities": [
+      {
+        "name": "Paris",
+        "coordinates": [48.8566, 2.3522],
+        "interest": "Arts & Culture"
+      },
+      {
+        "name": "Lyon",
+        "coordinates": [45.764, 4.8357],
+        "interest": "Food"
+      },
+      {
+        "name": "Nice",
+        "coordinates": [43.7102, 7.262],
+        "interest": "Luxury"
+      }
+    ]
+  },
+  {
+    "country": "Italy",
+    "cities": [
+      {
+        "name": "Milan",
+        "coordinates": [45.4642, 9.19],
+        "interest": "Luxury"
+      },
+      {
+        "name": "Rome",
+        "coordinates": [41.9028, 12.4964],
+        "interest": "Culture"
+      },
+      {
+        "name": "Florence",
+        "coordinates": [43.7696, 11.2558],
+        "interest": "Arts & Culture"
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "cities": [
+      {
+        "name": "Seville",
+        "coordinates": [37.3891, -5.9845],
+        "interest": "Adventure"
+      },
+      {
+        "name": "Barcelona",
+        "coordinates": [41.3874, 2.1686],
+        "interest": "Arts & Culture"
+      },
+      {
+        "name": "Madrid",
+        "coordinates": [40.4168, -3.7038],
+        "interest": "Food"
+      }
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "cities": [
+      {
+        "name": "Amsterdam",
+        "coordinates": [52.3676, 4.9041],
+        "interest": "Wellness"
+      },
+      {
+        "name": "Rotterdam",
+        "coordinates": [51.9244, 4.4777],
+        "interest": "Culture"
+      }
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "cities": [
+      {
+        "name": "London",
+        "coordinates": [51.5072, -0.1276],
+        "interest": "Culture"
+      },
+      {
+        "name": "Edinburgh",
+        "coordinates": [55.9533, -3.1883],
+        "interest": "Adventure"
+      }
+    ]
+  }
+]

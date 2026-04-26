@@ -1,0 +1,20 @@
+[
+  {
+    "name": "France",
+    "cityCount": 12,
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/paris.png",
+    "summary": "Classic boulevards, vineyard routes, and timeless urban escapes."
+  },
+  {
+    "name": "Italy",
+    "cityCount": 10,
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/Italy.png",
+    "summary": "Historic coastlines, sunlit piazzas, and rich culinary trails."
+  },
+  {
+    "name": "Spain",
+    "cityCount": 9,
+    "image": "https://ik.imagekit.io/Ochoja01/euvoria/Spain.png",
+    "summary": "Late-night energy, seaside color, and architecture full of character."
+  }
+]
