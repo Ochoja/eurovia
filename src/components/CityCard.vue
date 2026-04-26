@@ -17,8 +17,7 @@ defineProps<{
 
 <template>
   <article
-    class="city-card relative isolate overflow-hidden rounded-[18px] shadow-[var(--shadow-md)]"
-    :class="city.layout === 'tall' ? 'min-h-[33rem]' : 'min-h-[16rem]'"
+    class="city-card relative isolate overflow-hidden rounded-[18px] shadow-[var(--shadow-md)] min-h-64"
   >
     <img
       :src="city.image"
@@ -29,8 +28,8 @@ defineProps<{
       class="absolute inset-0 w-full h-full"
       style="
         background:
-          linear-gradient(180deg, rgba(10, 14, 21, 0.08) 0%, rgba(10, 14, 21, 0.66) 100%),
-          linear-gradient(180deg, rgba(10, 14, 21, 0.02) 40%, rgba(10, 14, 21, 0.78) 100%);
+          linear-gradient(180deg, rgba(10, 14, 21, 0.08) 0%, rgba(10, 14, 21, 0.45) 100%),
+          linear-gradient(180deg, rgba(10, 14, 21, 0.02) 40%, rgba(10, 14, 21, 0.45) 100%);
       "
     ></div>
 
@@ -45,7 +44,7 @@ defineProps<{
     <!-- Default info label -->
     <div class="city-card__content absolute inset-0 flex items-end p-3.5 text-white">
       <div
-        class="city-card__default border border-white/24 rounded-md bg-[rgba(18,18,18,0.24)] backdrop-blur-[14px] px-2.5 py-2 w-fit max-w-[15rem] transition-all duration-300"
+        class="city-card__default border border-white/24 rounded-md bg-[rgba(18,18,18,0.1)] backdrop-blur-sm px-2.5 py-2 w-fit max-w-[15rem] transition-all duration-300"
       >
         <h3 class="m-0 font-[Plus_Jakarta_Sans] font-medium text-[1.3rem] leading-tight">
           {{ city.name }}

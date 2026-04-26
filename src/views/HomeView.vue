@@ -58,6 +58,11 @@ const categories = [
     icon: 'solar:crown-linear',
     image: 'https://ik.imagekit.io/Ochoja01/euvoria/London.png',
   },
+  {
+    label: 'History',
+    icon: 'solar:diploma-linear',
+    image: 'https://ik.imagekit.io/Ochoja01/euvoria/Italy.png',
+  },
 ]
 
 const searchOptions = searchData as SearchCountry[]
@@ -254,7 +259,11 @@ onBeforeUnmount(() => {
     <section
       id="discover"
       class="relative min-h-[46rem] flex items-center"
-      style="background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.68) 100%), url('https://ik.imagekit.io/Ochoja01/euvoria/Hero.png') center/cover no-repeat;"
+      style="
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.68) 100%),
+          url('https://ik.imagekit.io/Ochoja01/euvoria/Hero.png') center/cover no-repeat;
+      "
     >
       <TheNavigation :sections="sections" />
 
@@ -398,9 +407,9 @@ onBeforeUnmount(() => {
       id="categories"
       class="py-[clamp(4.5rem,7vw,7.5rem)] px-[clamp(1.25rem,5vw,3.25rem)] bg-[#fafafa]"
     >
-      <div class="w-full max-w-[1280px] mx-auto">
+      <div class="w-full max-w-7xl mx-auto">
         <div
-          class="category-panel relative overflow-hidden min-h-[30rem] rounded-[28px] bg-[#151a20] shadow-[var(--shadow-lg)]"
+          class="category-panel relative overflow-hidden min-h-120 rounded-[28px] bg-[#151a20] shadow-[var(--shadow-lg)]"
         >
           <!-- Background image — fades between categories -->
           <Transition name="cat-fade">
@@ -411,7 +420,6 @@ onBeforeUnmount(() => {
               class="absolute inset-0 w-full h-full object-cover"
             />
           </Transition>
-
           <!-- Dark overlay -->
           <div class="absolute inset-0 bg-[rgba(10,14,21,0.55)]"></div>
 
@@ -426,22 +434,22 @@ onBeforeUnmount(() => {
             </span>
             <h2 class="section-title text-white">Travel By Interests</h2>
 
-            <div class="category-grid grid w-full max-w-[60rem] gap-4 mt-8">
+            <div class="category-grid flex flex-wrap justify-center w-full max-w-[60rem] gap-4 mt-8">
               <button
                 v-for="category in categories"
                 :key="category.label"
                 type="button"
-                class="category-chip inline-flex min-h-[5.35rem] items-center justify-center gap-2.5 rounded-[18px] border backdrop-blur-[16px] text-white cursor-pointer px-5 py-4 text-[1.05rem] transition-all duration-300"
+                class="category-chip flex flex-col items-center justify-center gap-3 rounded-[18px] border text-white cursor-pointer py-6 px-4 text-[0.95rem] font-medium transition-all duration-300"
                 :class="
                   selectedCategory === category.label || hoveredCategory === category.label
-                    ? 'border-white/70 bg-white/22 shadow-[0_10px_28px_rgba(0,0,0,0.22)]'
-                    : 'border-white/38 bg-[rgba(21,24,31,0.2)] hover:border-white/55 hover:bg-white/15'
+                    ? 'border-white/60 bg-white/18 shadow-[0_10px_28px_rgba(0,0,0,0.3)]'
+                    : 'border-white/25 bg-[rgba(10,14,21,0.55)] hover:border-white/45 hover:bg-[rgba(10,14,21,0.72)]'
                 "
                 @mouseenter="hoveredCategory = category.label"
                 @mouseleave="hoveredCategory = ''"
                 @click="selectedCategory = category.label"
               >
-                <Icon :icon="category.icon" class="text-[1.1rem]" />
+                <Icon :icon="category.icon" class="text-[1.6rem]" />
                 <span>{{ category.label }}</span>
               </button>
             </div>
@@ -612,24 +620,19 @@ onBeforeUnmount(() => {
   }
 }
 
+/* ── Category panel text overrides ─────────────────── */
+.category-panel .section-title {
+  color: #fff;
+}
+
 /* ── Category grid ──────────────────────────────── */
-@media (min-width: 700px) {
-  .category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.category-chip {
+  flex: 0 0 calc(50% - 0.5rem);
 }
 
 @media (min-width: 960px) {
-  .category-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  /* Centre the bottom two chips */
-  .category-grid .category-chip:nth-child(5) {
-    grid-column: 2;
-  }
-  .category-grid .category-chip:nth-child(6) {
-    grid-column: 3;
+  .category-chip {
+    flex: 0 0 calc(25% - 0.75rem);
   }
 }
 
