@@ -30,7 +30,7 @@ const interests = ['Arts & Culture', 'Adventure', 'Wellness', 'Food', 'Nature', 
 const categories = [
   {
     label: 'Adventure',
-    icon: 'solar:mountains-linear',
+    icon: 'mdi:mountain-outline',
     image: 'https://ik.imagekit.io/Ochoja01/euvoria/Spain.png',
   },
   {
@@ -70,13 +70,6 @@ const selectedCountry = ref(searchOptions[0]?.country ?? 'France')
 const selectedCity = ref(searchOptions[0]?.cities[0]?.name ?? 'Paris')
 const selectedInterest = ref('Arts & Culture')
 const selectedCategory = ref('Adventure')
-const hoveredCategory = ref('')
-
-const activeCategoryImage = computed(
-  () =>
-    categories.find((c) => c.label === (hoveredCategory.value || selectedCategory.value))?.image ??
-    categories[0]!.image,
-)
 
 const mapContainer = ref<HTMLDivElement | null>(null)
 let map: L.Map | null = null
@@ -211,15 +204,9 @@ onMounted(() => {
         stagger: 0.07,
         ease: 'power2.out',
       })
-      gsap.from('.category-panel', {
-        scrollTrigger: { trigger: '.category-panel', start: 'top 85%' },
-        opacity: 0,
-        scale: 0.975,
-        duration: 0.75,
-        ease: 'power2.out',
-      })
       gsap.from('.category-chip', {
         scrollTrigger: { trigger: '.category-grid', start: 'top 85%' },
+        immediateRender: false,
         opacity: 0,
         y: 18,
         duration: 0.5,
@@ -258,10 +245,10 @@ onBeforeUnmount(() => {
     <!-- ── Hero ───────────────────────────────────────── -->
     <section
       id="discover"
-      class="relative min-h-[46rem] flex items-center"
+      class="relative min-h-184 flex items-center"
       style="
         background:
-          linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.68) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%),
           url('https://ik.imagekit.io/Ochoja01/euvoria/Hero.png') center/cover no-repeat;
       "
     >
@@ -279,7 +266,7 @@ onBeforeUnmount(() => {
 
         <!-- Search bar -->
         <div
-          class="hero__search mt-4 w-full max-w-204 overflow-hidden rounded-[999px] border border-white/10 backdrop-blur-[3xl]"
+          class="hero__search mt-4 w-full max-w-204 overflow-hidden rounded-[999px] border border-white/10 backdrop-blur-[10px]"
           style="background: #fafafa33"
         >
           <!-- Country -->
@@ -403,57 +390,22 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- ── Travel By Interests ────────────────────────── -->
-    <section
-      id="categories"
-      class="py-[clamp(4.5rem,7vw,7.5rem)] px-[clamp(1.25rem,5vw,3.25rem)] bg-[#fafafa]"
-    >
-      <div class="w-full max-w-7xl mx-auto">
-        <div
-          class="category-panel relative overflow-hidden min-h-120 rounded-[28px] bg-[#151a20] shadow-[var(--shadow-lg)]"
-        >
-          <!-- Background image — fades between categories -->
-          <Transition name="cat-fade">
-            <img
-              :key="activeCategoryImage"
-              :src="activeCategoryImage"
-              alt=""
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-          </Transition>
-          <!-- Dark overlay -->
-          <div class="absolute inset-0 bg-[rgba(10,14,21,0.55)]"></div>
-
-          <!-- Content -->
-          <div
-            class="relative flex flex-col items-center justify-center min-h-[30rem] px-8 py-10 text-center"
+    <section id="categories" class="cat-section">
+      <div class="cat-inner">
+        <span class="cat-badge">Categories</span>
+        <h2 class="cat-title">Travel By Interests</h2>
+        <div class="cat-grid category-grid">
+          <button
+            v-for="category in categories"
+            :key="category.label"
+            type="button"
+            class="cat-card category-chip bg-white/5 backdrop-blur-[5px] border border-white/20 hover:bg-white/14 transition-all duration-300"
+            :class="{ 'cat-card--active': selectedCategory === category.label }"
+            @click="selectedCategory = category.label"
           >
-            <span
-              class="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/12 backdrop-blur-[16px] text-white/86 px-3 py-1 text-[0.78rem] mb-3"
-            >
-              Categories
-            </span>
-            <h2 class="section-title text-white">Travel By Interests</h2>
-
-            <div class="category-grid flex flex-wrap justify-center w-full max-w-[60rem] gap-4 mt-8">
-              <button
-                v-for="category in categories"
-                :key="category.label"
-                type="button"
-                class="category-chip flex flex-col items-center justify-center gap-3 rounded-[18px] border text-white cursor-pointer py-6 px-4 text-[0.95rem] font-medium transition-all duration-300"
-                :class="
-                  selectedCategory === category.label || hoveredCategory === category.label
-                    ? 'border-white/60 bg-white/18 shadow-[0_10px_28px_rgba(0,0,0,0.3)]'
-                    : 'border-white/25 bg-[rgba(10,14,21,0.55)] hover:border-white/45 hover:bg-[rgba(10,14,21,0.72)]'
-                "
-                @mouseenter="hoveredCategory = category.label"
-                @mouseleave="hoveredCategory = ''"
-                @click="selectedCategory = category.label"
-              >
-                <Icon :icon="category.icon" class="text-[1.6rem]" />
-                <span>{{ category.label }}</span>
-              </button>
-            </div>
-          </div>
+            <Icon :icon="category.icon" class="cat-icon" />
+            <span class="cat-label">{{ category.label }}</span>
+          </button>
         </div>
       </div>
     </section>
@@ -463,11 +415,11 @@ onBeforeUnmount(() => {
       id="map"
       class="py-[clamp(4.5rem,7vw,7.5rem)] px-[clamp(1.25rem,5vw,3.25rem)] bg-[#fafafa]"
     >
-      <div class="map-section w-full max-w-[1280px] mx-auto grid gap-10 items-center">
-        <div class="map-copy max-w-[30rem]">
+      <div class="map-section w-full max-w-7xl mx-auto grid gap-10 items-center">
+        <div class="map-copy max-w-120">
           <h2 class="section-title">
             Map Your Journey
-            <span class="text-[var(--accent)]">Across Europe</span>
+            <span class="text-(--accent)">Across Europe</span>
           </h2>
           <p class="section-copy">
             Interact with our dynamic map to discover hidden gems tailored to your profile.
@@ -476,10 +428,10 @@ onBeforeUnmount(() => {
             <div class="grid grid-cols-[auto_1fr] gap-3.5 items-start">
               <Icon
                 icon="solar:map-point-rotate-linear"
-                class="mt-0.5 text-[var(--text-strong)] text-[1.15rem]"
+                class="mt-0.5 text-(--text-strong) text-[1.15rem]"
               />
               <div>
-                <strong class="block text-[var(--text-strong)] font-bold">Interactive Pins</strong>
+                <strong class="block text-(--text-strong) font-bold">Interactive Pins</strong>
                 <p class="m-0 mt-1 text-[var(--text-soft)] text-sm">
                   Click city markers to pin up to 5 cities and see their photo.
                 </p>
@@ -620,33 +572,86 @@ onBeforeUnmount(() => {
   }
 }
 
-/* ── Category panel text overrides ─────────────────── */
-.category-panel .section-title {
-  color: #fff;
+/* ── Categories section ─────────────────────────── */
+.cat-section {
+  padding: clamp(4.5rem, 7vw, 7.5rem) clamp(1.25rem, 5vw, 3.25rem);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.6)),
+    url('https://ik.imagekit.io/Ochoja01/euvoria/Categories.png') center / cover no-repeat;
 }
 
-/* ── Category grid ──────────────────────────────── */
-.category-chip {
-  flex: 0 0 calc(50% - 0.5rem);
+.cat-inner {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.86);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.cat-title {
+  margin: 0;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 60rem;
 }
 
 @media (min-width: 960px) {
-  .category-chip {
-    flex: 0 0 calc(25% - 0.75rem);
+  .cat-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* ── Category bg crossfade ──────────────────────── */
-.cat-fade-enter-active,
-.cat-fade-leave-active {
-  transition: opacity 0.45s ease;
-  position: absolute;
-  inset: 0;
+.cat-card {
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem 1rem;
+  min-height: 8rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.cat-fade-enter-from,
-.cat-fade-leave-to {
-  opacity: 0;
+.cat-card--active {
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  background: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.cat-icon {
+  font-size: 1.6rem;
 }
 
 /* ── Map section ────────────────────────────────── */

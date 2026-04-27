@@ -55,10 +55,8 @@ defineProps<{
 
     <!-- Hover preview -->
     <div
-      class="city-card__preview absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-2 py-6 opacity-0 transition-all duration-300 translate-y-3"
-      style="
-        background: linear-gradient(180deg, rgba(10, 14, 21, 0.26) 0%, rgba(10, 14, 21, 0.78) 100%);
-      "
+      class="city-card__preview absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-2 py-6"
+      style="background: rgba(10, 14, 21, 0.82);"
     >
       <h3
         class="m-0 font-[Plus_Jakarta_Sans] font-semibold text-white"
@@ -95,6 +93,14 @@ defineProps<{
 .city-card:hover .city-card__default {
   opacity: 0;
   transform: translateY(8px);
+}
+
+.city-card__preview {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .city-card:hover .city-card__preview {

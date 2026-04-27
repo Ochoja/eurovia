@@ -88,7 +88,7 @@ onBeforeUnmount(() => {
         class="flex items-center justify-between gap-3 transition-all duration-300"
         :class="
           isFloating
-            ? 'bg-[rgba(10,14,22,0.82)] backdrop-blur-2xl border border-white/10 rounded-full py-1.5 pl-5 pr-1.5'
+            ? 'bg-[rgba(10,14,22,0.82)] backdrop-blur-[10px] border border-white/10 rounded-full py-1.5 pl-5 pr-1.5'
             : ''
         "
       >
@@ -110,7 +110,7 @@ onBeforeUnmount(() => {
           :class="
             isFloating
               ? 'bg-transparent border-transparent shadow-none'
-              : 'border border-white/15 bg-[#FAFAFA]/20 backdrop-blur-[18px] shadow-[0_8px_25px_rgba(16,24,40,0.14)]'
+              : 'border border-white/30 bg-[#FAFAFA]/10 backdrop-blur-[18px] shadow-[0_8px_25px_rgba(16,24,40,0.14)]'
           "
         >
           <button
@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
           <!-- Language -->
           <button
             type="button"
-            class="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[#FAFAFA]/50 text-white px-3.5 py-2.5 text-sm border border-[#9E9B9B] cursor-pointer transition-all duration-300"
+            class="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[#FAFAFA]/20 text-white backdrop-blur-[10px] px-3.5 py-2.5 text-sm border border-[#9E9B9B] cursor-pointer transition-all duration-300"
           >
             <Icon icon="mdi:translate" class="text-white" />
             <span class="text-white">En</span>

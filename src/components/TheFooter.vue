@@ -14,7 +14,7 @@ const email = ref('')
         <p class="m-0 text-white font-[Plus_Jakarta_Sans] text-2xl font-extrabold">
           EURO<span class="text-[var(--accent)]">VIA</span>
         </p>
-        <p class="mt-3 text-white/40 text-[0.82rem] leading-[1.65] max-w-[22ch]">
+        <p class="mt-3 text-white/60 text-[0.82rem] leading-[1.65] max-w-[22ch]">
           Curated European journeys for the modern explorer. Discover destinations, cities,
           and culture-driven escapes.
         </p>
@@ -25,7 +25,7 @@ const email = ref('')
         <p class="m-0 mb-4 text-white text-[0.9rem] font-semibold">Destinations</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-2.5">
           <li v-for="dest in ['Italy', 'Paris', 'Amsterdam', 'London', 'Seville']" :key="dest">
-            <a href="#" class="text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">{{ dest }}</a>
+            <a href="#" class="footer-link text-[0.875rem]">{{ dest }}</a>
           </li>
         </ul>
       </div>
@@ -35,15 +35,21 @@ const email = ref('')
         <p class="m-0 mb-4 text-white text-[0.9rem] font-semibold">Support</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           <li>
-            <a href="#" class="inline-flex items-center gap-2 text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">
+            <a href="#" class="footer-link inline-flex items-center gap-2 text-[0.875rem]">
               <Icon icon="mdi:facebook" class="text-[1.05rem]" />
               <span>Facebook</span>
             </a>
           </li>
           <li>
-            <a href="#" class="inline-flex items-center gap-2 text-white/48 text-[0.875rem] hover:text-white/90 transition-colors duration-200">
+            <a href="#" class="footer-link inline-flex items-center gap-2 text-[0.875rem]">
               <Icon icon="mdi:instagram" class="text-[1.05rem]" />
               <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link inline-flex items-center gap-2 text-[0.875rem]">
+              <Icon icon="mdi:whatsapp" class="text-[1.05rem]" />
+              <span>WhatsApp</span>
             </a>
           </li>
         </ul>
@@ -52,15 +58,15 @@ const email = ref('')
       <!-- Newsletter -->
       <div>
         <p class="m-0 mb-1 text-white text-[0.9rem] font-semibold">Subscribe to our Newsletter</p>
-        <p class="mt-1 mb-4 text-white/40 text-[0.8rem] leading-[1.5]">
+        <p class="mt-1 mb-4 text-white/60 text-[0.8rem] leading-[1.5]">
           Sign up for updates by subscribing to our newsletter
         </p>
-        <div class="flex rounded-full overflow-hidden border border-white/10 bg-white/6 max-w-[20rem]">
+        <div class="flex rounded-full overflow-hidden border border-white/28 bg-white/8 max-w-104">
           <input
             v-model="email"
             type="email"
             placeholder="Enter your email"
-            class="flex-1 min-w-0 bg-transparent border-0 text-white text-[0.82rem] px-4 py-[0.68rem] outline-none placeholder-white/30"
+            class="flex-1 min-w-0 bg-transparent border-0 text-white text-[0.82rem] px-4 py-[0.68rem] outline-none placeholder-white/52"
           />
           <button
             type="button"
@@ -76,6 +82,16 @@ const email = ref('')
 </template>
 
 <style scoped>
+.footer-link {
+  color: #d4d8e2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
 .footer-grid {
   grid-template-columns: 1fr;
 }
